@@ -2,6 +2,18 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 
 inquirer
-.prompt()
+.prompt([
+    {
+        type: "checkbox",
+        name: "stuff",
+        message: "hey chose things",
+        choices:[
+            {name:"one"},
+            {nane: "next"},
+            {name: "ohhh yeah"},
+        ]
+    }
+])
 
-.then()
+.then(console.log("finished"))
+.catch(err =>{console.log ("there was an ErRoR",err);});
