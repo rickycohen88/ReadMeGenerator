@@ -16,4 +16,5 @@ inquirer
 ])
 
 .then(console.log("finished"))
+
 .catch(err =>{console.log ("there was an ErRoR",err);});
