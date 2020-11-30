@@ -1,0 +1,19 @@
+{
+  "name": "readmegenerator",
+  "version": "1.0.0",
+  "description": "A npm to generate a ReadMe file in Markdown",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rickycohen88/ReadMeGenerator.git"
+  },
+  "author": "Ricky Cohen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rickycohen88/ReadMeGenerator/issues"
+  },
+  "homepage": "https://github.com/rickycohen88/ReadMeGenerator#readme"
+}
