@@ -11,7 +11,29 @@ determineSections
     {
         type: "input",
         name: "Title",
-        message: "Enter your project title"
+        message: "Please enter your project title"
+    },
+    {
+        type: "input",
+        name: "github",
+        message: "Please enter your github user name."
+    },
+    {
+        type: "input",
+        name: "email",
+        message: "Please enter your email address."
+    },
+    {
+        type:"checkbox",
+        name:"Licences",
+        message:"Please choose from the list of licences here.",
+        choices:[
+            {name:"MIT"},
+            {name:"Apache"},
+            {name:"GNU"},
+            {name:"Creative Commons"}
+        ]
+
     },
     {
         type: "checkbox",
@@ -40,19 +62,37 @@ determineSections
         when: function (responce){
             return responce.listOfSections.indexOf('Motivation')>-1
         },
-        preffix: "",
-        suffix: "",
+        preffix: "# Motivation<br><br>",
+        suffix: "<br><br>",
     },
     {
         type: "input",
         name: "buildStatusEntry",
-        message: "Please enter your Build Status entry",
+        message: "Please enter your Build Status written entry, you will be asked if you would like to include a badge later.",
         when: function (responce){
             return responce.listOfSections.indexOf('buildStatus')>-1
         },
-        preffix: "",
-        suffix: "",
+        preffix: "# Build Status<br><br>",
+        suffix: "<br><br>",
     },
+        {
+            type: "confirm",
+            name: "buildStatusBadgesConfirm",
+            message: "Would you like to incude badges?",
+            when: function (responce){
+                return responce.listOfSections.indexOf('buildStatus')>-1
+            }
+        },
+            {
+                type: "input",
+                name: "buildStatusBadges",
+                message: "Please enter your Badges url seperated by one(1) space.",
+                when: function (responce){
+                    if(responce.buildStatusBadgesConfirm == true){
+                        return true;
+                    }
+                }
+            },
     {
         type: "input",
         name: "codeStyleEntry",
@@ -60,28 +100,28 @@ determineSections
         when: function (responce){
             return responce.listOfSections.indexOf('codeStyle')>-1
         },
-        preffix: "",
-        suffix: "",
+        preffix: "# Code Style<br><br>",
+        suffix: "<br><br>",
     },
     {
         type: "input",
         name: "ScreenshotsEntry",
-        message: "Please enter your Screenshots entry/urls seperated by a space",
+        message: "Please enter your Screenshots urls seperated by one(1) space.",
         when: function (responce){
             return responce.listOfSections.indexOf('screenshots')>-1
         },
-        preffix: "",
-        suffix: "",
+        preffix: "# Screenshots<br><br>",
+        suffix: "<br><br>",
     },
     {
         type: "input",
         name: "techFramework",
-        message: "Please enter your techFramework entry",
+        message: "Please enter your Tech/Framework entry",
         when: function (responce){
             return responce.listOfSections.indexOf('techFramework')>-1
         },
-        preffix: "",
-        suffix: "",
+        preffix: "#Tech/Framework<br><br>",
+        suffix: "<br><br>",
     },
     {
         type: "input",
@@ -90,8 +130,8 @@ determineSections
         when: function (responce){
             return responce.listOfSections.indexOf('features')>-1
         },
-        preffix: "",
-        suffix: "",
+        preffix: "# Features<br><br>",
+        suffix: "<br><br>",
     },
     {
         type: "input",
@@ -100,8 +140,8 @@ determineSections
         when: function (responce){
             return responce.listOfSections.indexOf('codeExample')>-1
         },
-        preffix: "",
-        suffix: "",
+        preffix: "# Code Example<br><br>",
+        suffix: "<br><br>",
     },
     {
         type: "input",
@@ -110,8 +150,8 @@ determineSections
         when: function (responce){
             return responce.listOfSections.indexOf('installation')>-1
         },
-        preffix: "",
-        suffix: "",
+        preffix: "# Installation<br><br>",
+        suffix: "<br><br>",
     },
     {
         type: "input",
@@ -120,8 +160,8 @@ determineSections
         when: function (responce){
             return responce.listOfSections.indexOf('apiReference')>-1
         },
-        preffix: "",
-        suffix: "",
+        preffix: "# API Reference<br><br>",
+        suffix: "<br><br>",
     },
     {
         type: "input",
@@ -130,8 +170,8 @@ determineSections
         when: function (responce){
             return responce.listOfSections.indexOf('howToUse')>-1
         },
-        preffix: "",
-        suffix: "",
+        preffix: "# How To Use<br><br>",
+        suffix: "<br><br>",
     },
     {
         type: "input",
@@ -140,8 +180,8 @@ determineSections
         when: function (responce){
             return responce.listOfSections.indexOf('contribute')>-1
         },
-        preffix: "",
-        suffix: "",
+        preffix: "# Contribute<br><br>",
+        suffix: "<br><br>",
     },
     {
         type: "input",
@@ -150,8 +190,8 @@ determineSections
         when: function (responce){
             return responce.listOfSections.indexOf('Credits')>-1
         },
-        preffix: "",
-        suffix: "",
+        preffix: "# Credits<br><br>",
+        suffix: "<br><br>",
     },
     {
         type: "input",
@@ -160,8 +200,8 @@ determineSections
         when: function (responce){
             return responce.listOfSections.indexOf('licence')>-1
         },
-        preffix: "",
-        suffix: "",
+        preffix: "# Licence<br><br>",
+        suffix: "<br><br>",
     },
 ])
 
