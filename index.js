@@ -398,7 +398,7 @@ return determineSections
         return JSON.stringify(genFile);
     }
 promtUser()
-.then((responce) => writeFileAsync('README.md', generateMarkDown(responce))
+.then((responce) => writeFileAsync('readME.md', generateMarkDown(responce))
     // choicesResponce = JSON.stringify(responce);
 //(  console.log("Executed Successfully"))
     // console.log(choicesResponce);
