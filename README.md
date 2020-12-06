@@ -1,1 +1,50 @@
-"# test  ©undefined<br><br>## Motivation<br><br>undefined<br><br>## Questions? <br><br> [link](github.com/test)<br>Email:undefined<br><br>## Licence<br><br>undefined<br><br>\n                        Copyright [2020] [test]\n\n                        Licensed under the Apache License, Version 2.0 (the \"License\");\n                        you may not use this file except in compliance with the License.\n                        You may obtain a copy of the License at\n\n                        http://www.apache.org/licenses/LICENSE-2.0\n\n                        Unless required by applicable law or agreed to in writing, software\n                        distributed under the License is distributed on an \"AS IS\" BASIS,\n                        WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n                        See the License for the specific language governing permissions and\n                        limitations under the License."
+# ReadMeGenerator
+![Image](img.sheilds.io/badge/Licence-undefined-green)
+## Motivation
+undefined
+## Build Status
+build status is passing and verified
+## Code Style
+Rickily Dickily
+## Screenshots
+Assets/Captyur.PNG
+## Tech/Framework
+node??
+## Features
+it makes a mark down file
+## Code Examples
+undefined
+## Installation
+Have nodeJS installed. Down load file move to file location in terminal do npm install. when it finishes type the following into your terminal: node index.js
+## API Reference
+none
+## How To Use
+same as installation
+## Questions? 
+ [Github](github.com/rickycohen88)<br>### *Email*:redacted
+## Contribute
+please do
+## Credits
+me
+## Licence
+
+
+ Copyright (c) <2020> <rickycohen88>
+
+                Permission is hereby granted, free of charge, to any person obtaining a copy
+                of this software and associated documentation files (the "Software"), to deal
+                in the Software without restriction, including without limitation the rights
+                to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+                copies of the Software, and to permit persons to whom the Software is
+                furnished to do so, subject to the following conditions:
+                
+                The above copyright notice and this permission notice shall be included in all
+                copies or substantial portions of the Software.
+                
+                THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+                IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+                FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+                AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+                LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+                OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+                SOFTWARE.

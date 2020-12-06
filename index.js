@@ -61,7 +61,7 @@ return determineSections
         name: "motivationEntry",
         message: "Please enter your motivation entry",
         when: function (responce){
-            return responce.listOfSections.indexOf('Motivation')>-1
+            return responce.listOfSections.indexOf('motivation')>-1
         },
         
     },
@@ -112,7 +112,7 @@ return determineSections
     },
     {
         type: "input",
-        name: "techFramework",
+        name: "techFrameworkEntry",
         message: "Please enter your Tech/Framework entry",
         when: function (responce){
             return responce.listOfSections.indexOf('techFramework')>-1
@@ -121,7 +121,7 @@ return determineSections
     },
     {
         type: "input",
-        name: "features",
+        name: "featuresEntry",
         message: "Please enter your features entry",
         when: function (responce){
             return responce.listOfSections.indexOf('features')>-1
@@ -130,8 +130,8 @@ return determineSections
     },
     {
         type: "input",
-        name: "codeExample",
-        message: "Please enter your codeExample entry",
+        name: "codeExampleEntry",
+        message: "Please enter your codeExample entryies seperated by a space(this is for images)",
         when: function (responce){
             return responce.listOfSections.indexOf('codeExample')>-1
         },
@@ -196,61 +196,73 @@ return determineSections
 
  const generateMarkDown = (responce) =>{
      let genFile="";
-        genFile+=`# ${responce.Title}  ©${responce.Licence}<br><br>`;
+        genFile+=`# ${responce.Title}\r\n![Image](img.sheilds.io/badge/Licence-${responce.Licence}-green)\r\n`;
         if(responce.listOfSections.indexOf('motivation')>-1){
-            genFile += `## Motivation<br><br>`;
-            genFile += `${responce.motivationEntry}<br><br>`;
+            genFile += `## Motivation\r\n`;
+            genFile += `${responce.motivationEntry}\r\n`;
         }
         if(responce.listOfSections.indexOf('buildStatus')>-1){
-            genFile += `## Build Status<br><br>`;
-            genFile += `${responce.buildStatusEntry}<br><br>`;
+            genFile += `## Build Status\r\n`;
+                if(responce.buildStatusBadges){
+                    arrOfBadges=responce.buildStatusBadges.split(" ");
+                    for(i=0;i<arrOfBadges;i++){
+                        genFile += `![Image](`+arrOfBadges[i]+`)\r\n`; 
+                    }
+                }
+            genFile += `${responce.buildStatusEntry}\r\n`;
         }
         if(responce.listOfSections.indexOf('codeStyle')>-1){
-            genFile += `## Code Style<br><br>`;
-            genFile += `${responce.codeStyleEntry}<br><br>`;
+            genFile += `## Code Style\r\n`;
+            genFile += `${responce.codeStyleEntry}\r\n`;
         }
         if(responce.listOfSections.indexOf('screenshots')>-1){
-            genFile += `## Screenshots<br><br>`;
-            genFile += `${responce.screenshotsEntry}<br><br>`;
+            genFile += `## Screenshots\r\n`;
+            arrOfScreenshots = responce.screenshotsEntry.split(" ");
+            for(i=0;i<arrOfScreenshots;i++){
+                genFile += `![Image](`+arrOfScreenshots[i]+`)\r\n`; 
+            }
+            genFile += `${responce.screenshotsEntry}\r\n`;
         }
         if(responce.listOfSections.indexOf('techFramework')>-1){
-            genFile += `## Tech/Framework<br><br>`;
-            genFile += `${responce.techFrameworkEntry}<br><br>`;
+            genFile += `## Tech/Framework\r\n`;
+            genFile += `${responce.techFrameworkEntry}\r\n`;
         }
         if(responce.listOfSections.indexOf('features')>-1){
-            genFile += `## Features<br><br>`;
-            genFile += `${responce.featuresEntry}<br><br>`;
+            genFile += `## Features\r\n`;
+            genFile += `${responce.featuresEntry}\r\n`;
         }
         if(responce.listOfSections.indexOf('codeExample')>-1){
-            genFile += `## Code Examples<br><br>`;
-            genFile += `${responce.codeExamplesEntry}<br><br>`;
+            genFile += `## Code Examples\r\n`;
+            arrOfCodeExamples = responce.codeExample.split(" ");
+            for(i=0;i<arrOfCodeExamples;i++){
+                genFile += `![Image](`+arrOfCodeExamples[i]+`)\r\n`;
         }
         if(responce.listOfSections.indexOf('installation')>-1){
-            genFile += `## Installation<br><br>`;
-            genFile += `${responce.installationEntry}<br><br>`;
+            genFile += `## Installation\r\n`;
+            genFile += `${responce.installationEntry}\r\n`;
         }
         if(responce.listOfSections.indexOf('apiReference')>-1){
-            genFile += `## API Reference<br><br>`;
-            genFile += `${responce.apiReferenceEntry}<br><br>`
+            genFile += `## API Reference\r\n`;
+            genFile += `${responce.apiReferenceEntry}\r\n`
         }
         if(responce.listOfSections.indexOf('howToUse')>-1){
-            genFile += `## How To Use<br><br>`;
-            genFile += `${responce.howToUseEntry}<br><br>`;
+            genFile += `## How To Use\r\n`;
+            genFile += `${responce.howToUseEntry}\r\n`;
         }
-        genFile += `## Questions? <br><br> [link](github.com/${responce.Github})<br>Email:${responce.email}<br><br>`
+        genFile += `## Questions? \r\n [Github](https://github.com/${responce.Github})<br>### *Email*:${responce.Email}\r\n`
         if(responce.listOfSections.indexOf('contribute')>-1){
-            genFile += `## Contribute<br><br>`;
-            genFile += `${responce.contributeEntry}<br><br>`;
+            genFile += `## Contribute\r\n`;
+            genFile += `${responce.contributeEntry}\r\n`;
         }
         if(responce.listOfSections.indexOf('credits')>-1){
-            genFile += `## Credits<br><br>`;
-            genFile += `${responce.creditsEntry}<br><br>`;
+            genFile += `## Credits\r\n`;
+            genFile += `${responce.creditsEntry}\r\n`;
         }
-        genFile += `## Licence<br><br>`;
-        genFile += `${responce.licenceEntry}<br><br>`;
+        genFile += `## Licence\r\n`;
+        genFile += `${responce.licenceEntry}\r\n`;
         switch(responce.listOfSections.indexOf('licence')>-1){
             case (responce.Licences.indexOf("MIT")>-1):
-                genFile += `Copyright (c) <2020> <${responce.Github}>
+                genFile += `\r\n Copyright (c) <2020> <${responce.Github}>
 
                 Permission is hereby granted, free of charge, to any person obtaining a copy
                 of this software and associated documentation files (the "Software"), to deal
@@ -271,7 +283,7 @@ return determineSections
                 SOFTWARE.`
                 break;
             case (responce.Licences.indexOf(`Apache`)>-1):
-                genFile += `
+                genFile += `\r\n
                         Copyright [2020] [${responce.Github}]
 
                         Licensed under the Apache License, Version 2.0 (the "License");
@@ -288,7 +300,7 @@ return determineSections
                         break;
             
             case (responce.Licences.indexOf(`GNU`)>-1):
-                genFile += `
+                genFile += `\r\n
                 <one line to give the program's name and a brief idea of what it does.>
                 Copyright (C) <2020>  <${responce.Github}>
 
@@ -304,7 +316,7 @@ return determineSections
                 `
                 break;
             case (responce.Licences.indexOf(`Creative Commons`)>-1):
-                genFile += `
+                genFile += `\r\n
                 Creative Commons Attribution 4.0 International Public License
                 By exercising the Licensed Rights (defined below), You accept and agree to be bound by the terms and conditions of this Creative Commons Attribution 4.0 International Public License ("Public License"). To the extent this Public License may be interpreted as a contract, You are granted the Licensed Rights in consideration of Your acceptance of these terms and conditions, and the Licensor grants You such rights in consideration of benefits the Licensor receives from making the Licensed Material available under these terms and conditions.
 
@@ -395,30 +407,10 @@ return determineSections
                 break;
             default:
         }
-        return JSON.stringify(genFile);
+        return genFile;
     }
 promtUser()
 .then((responce) => writeFileAsync('readME.md', generateMarkDown(responce))
-    // choicesResponce = JSON.stringify(responce);
-//(  console.log("Executed Successfully"))
-    // console.log(choicesResponce);
-
-    
-    
 )
-
 .catch(err =>{console.log ("there was an ErRoR.. with determineSelections ",err);});
 
-//  const init = async () =>{
-
-//     try{
-//         const answers = await promtUser();
-//         const markDown = generateMarkDown(answers);
-//         await writeFileAsync('readMe.md', markDown);
-//         console.log("Successfully Wrote Mark Down File.");
-//     }catch(err){
-//         console.log(err);
-//     }
-//  };
-
- //init();
