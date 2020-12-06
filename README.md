@@ -1,5 +1,5 @@
 # ReadMeGenerator
-![Image](https://img.sheilds.io/badge/Licence-undefined-green)
+![Image](https://img.sheilds.io/badge/Licence-MIT-green)
 ## Motivation
 to build readme's lazily
 ## Build Status
