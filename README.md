@@ -1,36 +1,36 @@
 # ReadMeGenerator
 ![Image](https://img.sheilds.io/badge/Licence-MIT-green)
 ## Description
-Anode.js program that creates a readme in markdown
+A node program that creates a readme in markdown
 ## Table of Contents
 [Licence](#Licence)
  [Questions](#Questions)
-
+[motivation](#motivation)[buildStatus](#buildStatus)[codeStyle](#codeStyle)[screenshots](#screenshots)[techFramework](#techFramework)[features](#features)[codeExample](#codeExample)[installation](#installation)[apiReference](#apiReference)[howToUse](#howToUse)[contribute](#contribute)[credits](#credits)[licence](#licence)
 ## Motivation <a name="motivation"></a>
-To make a readme easily from the terminal/console
+To make a program that makes readmes to make life a bit simpler
 ## Build Status <a name="buildStatus"></a>
 Build is passing and verified
 ## Code Style <a name="codeStyle"></a>
-Slopppppy
+Sloppyy
 ## Screenshots <a name="screenshots"></a>
 Assets/Capture.PNG
 ## Tech/Framework <a name="techFramework"></a>
-node.js npm inquirer
+node(fs,util)
 ## Features <a name="features"></a>
-creates a Table of contents auto generates links and image tags
+Creates a Table of contents and creates all the links you enter
 ## Code Examples <a name="codeExamples"></a>
 ## Installation <a name="installation"></a>
-npm install
+install node, then d/l my files. open path in console and run npm install
 ## API Reference <a name="apiReference"></a>
 none
 ## How To Use <a name="howToUse"></a>
- follow prompts
+after setup is complete run a node instance of my program and follow the prompts
 ## Questions? <a name="Questions"></a>
  [Github](https://github.com/rickycohen88)<br>### *Email*:<Redacted>
 ## Contribute <a name="contribute"></a>
-yes please do
+please do
 ## Credits <a name="credits"></a>
-ME
+me
 ## Licence <a name="Licence"></a>
 
 
