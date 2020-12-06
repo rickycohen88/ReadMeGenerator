@@ -207,7 +207,7 @@ return determineSections
         genFile +=`## Table of Contents\r\n`;
         genFile +=`[Licence](#Licence)\r\n [Questions](#Questions)\r\n`;
         toc = responce.listOfSections;
-        for(i=0;i<toc;i++){
+        for(i=0;i<toc.length;i++){
             genFile += `[`+toc[i]+`](#`+toc[i]+`)`;
         }
         genFile+=`\r\n`;
