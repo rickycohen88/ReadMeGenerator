@@ -1,5 +1,5 @@
 # ReadMeGenerator
-![Image](https://img.sheilds.io/badge/Licence-MIT-green)
+![Image](https://img.shields.io/badge/Licence-MIT-green)
 ## Description
 A node program that creates a readme in markdown
 ## Table of Contents
