@@ -196,7 +196,7 @@ return determineSections
 
  const generateMarkDown = (responce) =>{
      let genFile="";
-        genFile+=`# ${responce.Title}\r\n![Image](img.sheilds.io/badge/Licence-${responce.Licence}-green)\r\n`;
+        genFile+=`# ${responce.Title}\r\n![Image](https://img.sheilds.io/badge/Licence-${responce.Licences}-green)\r\n`;
         if(responce.listOfSections.indexOf('motivation')>-1){
             genFile += `## Motivation\r\n`;
             genFile += `${responce.motivationEntry}\r\n`;
