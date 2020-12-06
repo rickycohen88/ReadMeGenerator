@@ -1,34 +1,37 @@
 # ReadMeGenerator
+![Image](https://img.sheilds.io/badge/Licence-MIT-green)
+## Description
+Anode.js program that creates a readme in markdown
+## Table of Contents
+[Licence](#Licence)
+ [Questions](#Questions)
 
-![Image](https://img.shields.io/badge/Licence-MIT-green)<br>
-
-## Motivation
-to build readme's lazily
-## Build Status
-build status is passing and verified
-## Code Style
-Rickily Dickily
-## Screenshots
-![Image](Assets/Capture.PNG)
-## Tech/Framework
-node??
-## Features
-it makes a mark down file
-## Code Examples
-![Image](Assets/Capture2.PNG)
-## Installation
-Have nodeJS installed. Down load file move to file location in terminal do npm install. when it finishes type the following into your terminal: node index.js
-## API Reference
+## Motivation <a name="motivation"></a>
+To make a readme easily from the terminal/console
+## Build Status <a name="buildStatus"></a>
+Build is passing and verified
+## Code Style <a name="codeStyle"></a>
+Slopppppy
+## Screenshots <a name="screenshots"></a>
+Assets/Capture.PNG
+## Tech/Framework <a name="techFramework"></a>
+node.js npm inquirer
+## Features <a name="features"></a>
+creates a Table of contents auto generates links and image tags
+## Code Examples <a name="codeExamples"></a>
+## Installation <a name="installation"></a>
+npm install
+## API Reference <a name="apiReference"></a>
 none
-## How To Use
-same as installation
-## Questions? 
- [Github](https://github.com/rickycohen88)<br>### *Email*:redacted
-## Contribute
-please do
-## Credits
-me
-## Licence
+## How To Use <a name="howToUse"></a>
+ follow prompts
+## Questions? <a name="Questions"></a>
+ [Github](https://github.com/rickycohen88)<br>### *Email*:<Redacted>
+## Contribute <a name="contribute"></a>
+yes please do
+## Credits <a name="credits"></a>
+ME
+## Licence <a name="Licence"></a>
 
 
  Copyright (c) <2020> <rickycohen88>

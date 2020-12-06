@@ -16,6 +16,11 @@ return determineSections
     },
     {
         type: "input",
+        name: "Description",
+        message: "Please enter your project Description"
+    },
+    {
+        type: "input",
         name: "Github",
         message: "Please enter your github user name."
     },
@@ -191,18 +196,27 @@ return determineSections
         },
 
     },
-]);
+    ]);
 }
 
  const generateMarkDown = (responce) =>{
      let genFile="";
-        genFile+=`# ${responce.Title}\r\n![Image](https://img.sheilds.io/badge/Licence-${responce.Licences}-green)\r\n`;
+        genFile +=`# ${responce.Title}\r\n![Image](https://img.sheilds.io/badge/Licence-${responce.Licences}-green)\r\n`;
+        genFile +=`## Description\r\n`;
+        genFile +=`${responce.Description}\r\n`
+        genFile +=`## Table of Contents\r\n`;
+        genFile +=`[Licence](#Licence)\r\n [Questions](#Questions)\r\n`;
+        toc = responce.listOfSections;
+        for(i=0;i<toc;i++){
+            genFile += `[`+toc[i]+`](#`+toc[i]+`)`;
+        }
+        genFile+=`\r\n`;
         if(responce.listOfSections.indexOf('motivation')>-1){
-            genFile += `## Motivation\r\n`;
+            genFile += `## Motivation <a name="motivation"></a>\r\n`;
             genFile += `${responce.motivationEntry}\r\n`;
         }
         if(responce.listOfSections.indexOf('buildStatus')>-1){
-            genFile += `## Build Status\r\n`;
+            genFile += `## Build Status <a name="buildStatus"></a>\r\n`;
                 if(responce.buildStatusBadges){
                     arrOfBadges=responce.buildStatusBadges.split(" ");
                     for(i=0;i<arrOfBadges;i++){
@@ -212,11 +226,11 @@ return determineSections
             genFile += `${responce.buildStatusEntry}\r\n`;
         }
         if(responce.listOfSections.indexOf('codeStyle')>-1){
-            genFile += `## Code Style\r\n`;
+            genFile += `## Code Style <a name="codeStyle"></a>\r\n`;
             genFile += `${responce.codeStyleEntry}\r\n`;
         }
         if(responce.listOfSections.indexOf('screenshots')>-1){
-            genFile += `## Screenshots\r\n`;
+            genFile += `## Screenshots <a name="screenshots"></a>\r\n`;
             arrOfScreenshots = responce.screenshotsEntry.split(" ");
             for(i=0;i<arrOfScreenshots;i++){
                 genFile += `![Image](`+arrOfScreenshots[i]+`)\r\n`; 
@@ -224,41 +238,41 @@ return determineSections
             genFile += `${responce.screenshotsEntry}\r\n`;
         }
         if(responce.listOfSections.indexOf('techFramework')>-1){
-            genFile += `## Tech/Framework\r\n`;
+            genFile += `## Tech/Framework <a name="techFramework"></a>\r\n`;
             genFile += `${responce.techFrameworkEntry}\r\n`;
         }
         if(responce.listOfSections.indexOf('features')>-1){
-            genFile += `## Features\r\n`;
+            genFile += `## Features <a name="features"></a>\r\n`;
             genFile += `${responce.featuresEntry}\r\n`;
         }
         if(responce.listOfSections.indexOf('codeExample')>-1){
-            genFile += `## Code Examples\r\n`;
-            arrOfCodeExamples = responce.codeExample.split(" ");
+            genFile += `## Code Examples <a name="codeExamples"></a>\r\n`;
+            arrOfCodeExamples = responce.codeExampleEntry.split(" ");
             for(i=0;i<arrOfCodeExamples;i++){
                 genFile += `![Image](`+arrOfCodeExamples[i]+`)\r\n`;
         }
         if(responce.listOfSections.indexOf('installation')>-1){
-            genFile += `## Installation\r\n`;
+            genFile += `## Installation <a name="installation"></a>\r\n`;
             genFile += `${responce.installationEntry}\r\n`;
         }
         if(responce.listOfSections.indexOf('apiReference')>-1){
-            genFile += `## API Reference\r\n`;
+            genFile += `## API Reference <a name="apiReference"></a>\r\n`;
             genFile += `${responce.apiReferenceEntry}\r\n`
         }
         if(responce.listOfSections.indexOf('howToUse')>-1){
-            genFile += `## How To Use\r\n`;
+            genFile += `## How To Use <a name="howToUse"></a>\r\n`;
             genFile += `${responce.howToUseEntry}\r\n`;
         }
-        genFile += `## Questions? \r\n [Github](https://github.com/${responce.Github})<br>### *Email*:${responce.Email}\r\n`
+        genFile += `## Questions? <a name="Questions"></a>\r\n [Github](https://github.com/${responce.Github})<br>### *Email*:<${responce.Email}>\r\n`
         if(responce.listOfSections.indexOf('contribute')>-1){
-            genFile += `## Contribute\r\n`;
+            genFile += `## Contribute <a name="contribute"></a>\r\n`;
             genFile += `${responce.contributeEntry}\r\n`;
         }
         if(responce.listOfSections.indexOf('credits')>-1){
-            genFile += `## Credits\r\n`;
+            genFile += `## Credits <a name="credits"></a>\r\n`;
             genFile += `${responce.creditsEntry}\r\n`;
         }
-        genFile += `## Licence\r\n`;
+        genFile += `## Licence <a name="Licence"></a>\r\n`;
         genFile += `${responce.licenceEntry}\r\n`;
         switch(responce.listOfSections.indexOf('licence')>-1){
             case (responce.Licences.indexOf("MIT")>-1):
@@ -409,8 +423,9 @@ return determineSections
         }
         return genFile;
     }
+}
 promtUser()
 .then((responce) => writeFileAsync('readME.md', generateMarkDown(responce))
 )
 .catch(err =>{console.log ("there was an ErRoR.. with determineSelections ",err);});
-
+ 
