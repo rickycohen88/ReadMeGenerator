@@ -1,19 +1,19 @@
 # ReadMeGenerator
 ![Image](img.sheilds.io/badge/Licence-undefined-green)
 ## Motivation
-undefined
+to build readme's lazily
 ## Build Status
 build status is passing and verified
 ## Code Style
 Rickily Dickily
 ## Screenshots
-Assets/Captyur.PNG
+![Image](Assets/Capture.PNG)
 ## Tech/Framework
 node??
 ## Features
 it makes a mark down file
 ## Code Examples
-undefined
+![Image](Assets/Capture2.PNG)
 ## Installation
 Have nodeJS installed. Down load file move to file location in terminal do npm install. when it finishes type the following into your terminal: node index.js
 ## API Reference
@@ -21,7 +21,7 @@ none
 ## How To Use
 same as installation
 ## Questions? 
- [Github](github.com/rickycohen88)<br>### *Email*:redacted
+ [Github](https://github.com/rickycohen88)<br>### *Email*:redacted
 ## Contribute
 please do
 ## Credits
