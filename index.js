@@ -201,82 +201,84 @@ return determineSections
 
  const generateMarkDown = (responce) =>{
      let genFile="";
-        genFile +=`# ${responce.Title}\r\n![Image](https://img.sheilds.io/badge/Licence-${responce.Licences}-green)\r\n`;
-        genFile +=`## Description\r\n`;
-        genFile +=`${responce.Description}\r\n`
-        genFile +=`## Table of Contents\r\n`;
-        genFile +=`[Licence](#Licence)\r\n [Questions](#Questions)\r\n`;
+        genFile +=`# ${responce.Title}\r\r![Image](https://img.sheilds.io/badge/Licence-${responce.Licences}-green)\r\r`;
+        genFile +=`## Description\r\r`;
+        genFile +=`${responce.Description}\r\r`
+        genFile +=`## Table of Contents\r\r`;
+        genFile +=`[Licence](#Licence)\r\r`;
+        genFile += `[Questions](#Questions)\r\r`;
         toc = responce.listOfSections;
         for(i=0;i<toc.length;i++){
-            genFile += `[`+toc[i]+`](#`+toc[i]+`)`;
+            genFile += `[`+toc[i]+`](#`+toc[i]+`)\r\r`;
         }
-        genFile+=`\r\n`;
+        genFile+=`\r\r`;
         if(responce.listOfSections.indexOf('motivation')>-1){
-            genFile += `## Motivation <a name="motivation"></a>\r\n`;
-            genFile += `${responce.motivationEntry}\r\n`;
+            genFile += `## Motivation \r\r`;
+            genFile += `${responce.motivationEntry}\r\r`;
         }
         if(responce.listOfSections.indexOf('buildStatus')>-1){
-            genFile += `## Build Status <a name="buildStatus"></a>\r\n`;
+            genFile += `## Build Status \r\r`;
                 if(responce.buildStatusBadges){
-                    arrOfBadges=responce.buildStatusBadges.split(" ");
+                    arrOfBadges=responce.buildStatusBadges.trim().split(" ");
                     for(i=0;i<arrOfBadges;i++){
-                        genFile += `![Image](`+arrOfBadges[i]+`)\r\n`; 
+                        genFile += "![Image]("+arrOfBadges[i].toString()+")"+`\r\r`; 
                     }
                 }
-            genFile += `${responce.buildStatusEntry}\r\n`;
+            genFile += `${responce.buildStatusEntry}\r\r`;
         }
         if(responce.listOfSections.indexOf('codeStyle')>-1){
-            genFile += `## Code Style <a name="codeStyle"></a>\r\n`;
-            genFile += `${responce.codeStyleEntry}\r\n`;
+            genFile += `## Code Style \r\r`;
+            genFile += `${responce.codeStyleEntry}\r\r`;
         }
         if(responce.listOfSections.indexOf('screenshots')>-1){
-            genFile += `## Screenshots <a name="screenshots"></a>\r\n`;
-            arrOfScreenshots = responce.screenshotsEntry.split(" ");
+            genFile += `## Screenshots \r\r`;
+            arrOfScreenshots = responce.screenshotsEntry.trim().split(" ");
             for(i=0;i<arrOfScreenshots;i++){
-                genFile += `![Image](`+arrOfScreenshots[i]+`)\r\n`; 
+                genFile += "![Image]("+arrOfScreenshots[i].toString()+")"+`\r\r`; 
             }
-            genFile += `${responce.screenshotsEntry}\r\n`;
+            genFile += `${responce.screenshotsEntry}\r\r`;
         }
         if(responce.listOfSections.indexOf('techFramework')>-1){
-            genFile += `## Tech/Framework <a name="techFramework"></a>\r\n`;
-            genFile += `${responce.techFrameworkEntry}\r\n`;
+            genFile += `## Tech/Framework \r\r`;
+            genFile += `${responce.techFrameworkEntry}\r\r`;
         }
         if(responce.listOfSections.indexOf('features')>-1){
-            genFile += `## Features <a name="features"></a>\r\n`;
-            genFile += `${responce.featuresEntry}\r\n`;
+            genFile += `## Features \r\r`;
+            genFile += `${responce.featuresEntry}\r\r`;
         }
         if(responce.listOfSections.indexOf('codeExample')>-1){
-            genFile += `## Code Examples <a name="codeExamples"></a>\r\n`;
-            arrOfCodeExamples = responce.codeExampleEntry.split(" ");
+            genFile += `## Code Examples \r\r`;
+            arrOfCodeExamples = responce.codeExampleEntry.trim().split(" ");
             for(i=0;i<arrOfCodeExamples;i++){
-                genFile += `![Image](`+arrOfCodeExamples[i]+`)\r\n`;
+                genFile += "![Image]("+arrOfCodeExamples[i].toString()+")"+`\r\r`;
         }
         if(responce.listOfSections.indexOf('installation')>-1){
-            genFile += `## Installation <a name="installation"></a>\r\n`;
-            genFile += `${responce.installationEntry}\r\n`;
+            genFile += `## Installation \r\r`;
+            genFile += `${responce.installationEntry}\r\r`;
         }
         if(responce.listOfSections.indexOf('apiReference')>-1){
-            genFile += `## API Reference <a name="apiReference"></a>\r\n`;
-            genFile += `${responce.apiReferenceEntry}\r\n`
+            genFile += `## API Reference \r\r`;
+            genFile += `${responce.apiReferenceEntry}\r\r`
         }
         if(responce.listOfSections.indexOf('howToUse')>-1){
-            genFile += `## How To Use <a name="howToUse"></a>\r\n`;
-            genFile += `${responce.howToUseEntry}\r\n`;
+            genFile += `## How To Use \r\r`;
+            genFile += `${responce.howToUseEntry}\r\r`;
         }
-        genFile += `## Questions? <a name="Questions"></a>\r\n [Github](https://github.com/${responce.Github})<br>### *Email*:<${responce.Email}>\r\n`
+        genFile += `## Questions? \r\r [Github](https://github.com/${responce.Github})\r\r`;
+        genFile += `## Email:<${responce.Email}>\r\r`;
         if(responce.listOfSections.indexOf('contribute')>-1){
-            genFile += `## Contribute <a name="contribute"></a>\r\n`;
-            genFile += `${responce.contributeEntry}\r\n`;
+            genFile += `## Contribute \r\r`;
+            genFile += `${responce.contributeEntry}\r\r`;
         }
         if(responce.listOfSections.indexOf('credits')>-1){
-            genFile += `## Credits <a name="credits"></a>\r\n`;
-            genFile += `${responce.creditsEntry}\r\n`;
+            genFile += `## Credits \r\r`;
+            genFile += `${responce.creditsEntry}\r\r`;
         }
-        genFile += `## Licence <a name="Licence"></a>\r\n`;
-        genFile += `${responce.licenceEntry}\r\n`;
+        genFile += `## Licence \r\r`;
+        genFile += `${responce.licenceEntry}\r\r`;
         switch(responce.listOfSections.indexOf('licence')>-1){
             case (responce.Licences.indexOf("MIT")>-1):
-                genFile += `\r\n Copyright (c) <2020> <${responce.Github}>
+                genFile += `\r\r Copyright (c) <2020> <${responce.Github}>
 
                 Permission is hereby granted, free of charge, to any person obtaining a copy
                 of this software and associated documentation files (the "Software"), to deal
@@ -297,7 +299,7 @@ return determineSections
                 SOFTWARE.`
                 break;
             case (responce.Licences.indexOf(`Apache`)>-1):
-                genFile += `\r\n
+                genFile += `\r\r
                         Copyright [2020] [${responce.Github}]
 
                         Licensed under the Apache License, Version 2.0 (the "License");
@@ -314,7 +316,7 @@ return determineSections
                         break;
             
             case (responce.Licences.indexOf(`GNU`)>-1):
-                genFile += `\r\n
+                genFile += `\r\r
                 <one line to give the program's name and a brief idea of what it does.>
                 Copyright (C) <2020>  <${responce.Github}>
 
@@ -330,7 +332,7 @@ return determineSections
                 `
                 break;
             case (responce.Licences.indexOf(`Creative Commons`)>-1):
-                genFile += `\r\n
+                genFile += `\r\r
                 Creative Commons Attribution 4.0 International Public License
                 By exercising the Licensed Rights (defined below), You accept and agree to be bound by the terms and conditions of this Creative Commons Attribution 4.0 International Public License ("Public License"). To the extent this Public License may be interpreted as a contract, You are granted the Licensed Rights in consideration of Your acceptance of these terms and conditions, and the Licensor grants You such rights in consideration of benefits the Licensor receives from making the Licensed Material available under these terms and conditions.
 

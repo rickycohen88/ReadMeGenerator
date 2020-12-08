@@ -1,40 +1,106 @@
-# ReadMeGenerator
-![Image](https://img.shields.io/badge/Licence-MIT-green)
+# Read Me Generator
+
+![Image](https://img.sheilds.io/badge/Licence-MIT-green)
+
 ## Description
-A node program that creates a readme in markdown
+
+A node Progran that creates a readme in markdown
+
 ## Table of Contents
+
 [Licence](#Licence)
- [Questions](#Questions)
-[motivation](#motivation)[buildStatus](#buildStatus)[codeStyle](#codeStyle)[screenshots](#screenshots)[techFramework](#techFramework)[features](#features)[codeExample](#codeExample)[installation](#installation)[apiReference](#apiReference)[howToUse](#howToUse)[contribute](#contribute)[credits](#credits)[licence](#licence)
-## Motivation <a name="motivation"></a>
-To make a program that makes readmes to make life a bit simpler
-## Build Status <a name="buildStatus"></a>
-Build is passing and verified
-## Code Style <a name="codeStyle"></a>
-Sloppyy
-## Screenshots <a name="screenshots"></a>
-Assets/Capture.PNG
-## Tech/Framework <a name="techFramework"></a>
-node(fs,util)
-## Features <a name="features"></a>
-Creates a Table of contents and creates all the links you enter
-## Code Examples <a name="codeExamples"></a>
-## Installation <a name="installation"></a>
-install node, then d/l my files. open path in console and run npm install
-## API Reference <a name="apiReference"></a>
+
+[Questions](#Questions)
+
+[motivation](#motivation)
+
+[buildStatus](#buildStatus)
+
+[codeStyle](#codeStyle)
+
+[screenshots](#screenshots)
+
+[techFramework](#techFramework)
+
+[features](#features)
+
+[codeExample](#codeExample)
+
+[installation](#installation)
+
+[apiReference](#apiReference)
+
+[howToUse](#howToUse)
+
+[contribute](#contribute)
+
+[credits](#credits)
+
+[licence](#licence)
+
+
+
+## Motivation 
+
+To creat a program that creates readme(s) to make life easier
+
+## Build Status 
+
+its passing 
+
+## Code Style 
+
+Slopppyy
+
+## Screenshots 
+
+![Image](Assets/Capture.PNG)
+
+## Tech/Framework 
+
+node(fs,util) and npm inquirer
+
+## Features 
+
+it creates links and headers automatically aswell as creates a table of contents
+
+## Code Examples 
+
+![Image](Assets/Capture2.PNG)
+
+## Installation 
+
+down load and install node then download these files
+
+## API Reference 
+
 none
-## How To Use <a name="howToUse"></a>
-after setup is complete run a node instance of my program and follow the prompts
-## Questions? <a name="Questions"></a>
- [Github](https://github.com/rickycohen88)<br>### *Email*:<Redacted>
-## Contribute <a name="contribute"></a>
-please do
-## Credits <a name="credits"></a>
-me
-## Licence <a name="Licence"></a>
+
+## How To Use 
+
+After you have the appropriate materials, you will need to open the console and rum an npm install on the files to retrive and download the dependencies[npm i ] after that create a node instance of the program- go to in in the console/terminal then type[node index.js] then follow the prompts
+
+## Questions? 
+
+ [Github](https://github.com/rickcohen88)
+
+Email:<redacted@redacted.com>
+
+## Contribute 
+
+please feel free to open issues on the repos page
+
+## Credits 
+
+me myself and i
+
+## Licence 
 
 
- Copyright (c) <2020> <rickycohen88>
+
+
+
+ Copyright (c) <2020> <rickcohen88>
 
                 Permission is hereby granted, free of charge, to any person obtaining a copy
                 of this software and associated documentation files (the "Software"), to deal
